@@ -630,7 +630,7 @@ def get_tax_accounts(
 			"width": 100,
 		},
     {
-      "label": _("Cost123"),
+      "label": _("Cost12"),
       "fieldname": "cost",
       "fieldtype": "Data",
       "width": 100,
