@@ -101,7 +101,7 @@ def _execute(
 		else:
 			row.update({"rate": d.base_net_rate, "amount": d.base_net_amount})
 		#update cost price
-		row.update({"cost": frappe.db.get_value("Item Price", {"item_code": "15755", "price_list": "Standard Buying"}, "price_list_rate")})
+		row.update({"cost": 10})
 
 		total_tax = 0
 		total_other_charges = 0
@@ -632,7 +632,7 @@ def get_tax_accounts(
 			"width": 100,
 		},
     {
-      "label": _("Cost122"),
+      "label": _("Cost"),
       "fieldname": "cost",
       "fieldtype": "Data",
       "width": 100,
