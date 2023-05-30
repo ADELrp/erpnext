@@ -101,7 +101,7 @@ def _execute(
 		else:
 			row.update({"rate": d.base_net_rate, "amount": d.base_net_amount})
 		#update cost price
-		buy_rate = frappe.db.get_value("Item Price", {"item_code": "1001", "price_list": "Standard Buying"}, "price_list_rate")
+		buy_rate = frappe.db.get_value("Item Price", {"item_code": d.item_code, "price_list": "Standard Buying"}, "price_list_rate")
 		row.update({"cost": buy_rate})
 		
 		total_tax = 0
