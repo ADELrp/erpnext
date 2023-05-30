@@ -104,7 +104,8 @@ def _execute(
 		buy_rate = frappe.db.get_value("Item Price", {"item_code": d.item_code, "price_list": "Standard Buying"}, "price_list_rate")
 		row.update({"cost": buy_rate})
 		row.update({"cost_total": buy_rate * d.stock_qty})
-		
+		row.update({"profit_total": d.base_net_amount - (buy_rate * d.stock_qty)})
+
 		total_tax = 0
 		total_other_charges = 0
 		for tax in tax_columns:
@@ -642,6 +643,12 @@ def get_tax_accounts(
     {
       "label": _("Cost Total"),
       "fieldname": "cost_total",
+      "fieldtype": "Data",
+      "width": 100,
+    },
+    {
+      "label": _("Profit Total"),
+      "fieldname": "profit_total",
       "fieldtype": "Data",
       "width": 100,
     },
