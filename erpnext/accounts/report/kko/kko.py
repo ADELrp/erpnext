@@ -638,18 +638,21 @@ def get_tax_accounts(
       "label": _("Cost"),
       "fieldname": "cost",
       "fieldtype": "Data",
+      "options": "currency",
       "width": 100,
     },
     {
       "label": _("Cost Total"),
       "fieldname": "cost_total",
       "fieldtype": "Data",
+      "options": "currency",
       "width": 100,
     },
     {
       "label": _("Profit Total"),
       "fieldname": "profit_total",
       "fieldtype": "Data",
+	  "options": "currency",
       "width": 100,
     },
 		{
