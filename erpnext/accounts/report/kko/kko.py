@@ -100,6 +100,8 @@ def _execute(
 			row.update({"rate": (d.base_net_rate * d.qty) / d.stock_qty, "amount": d.base_net_amount})
 		else:
 			row.update({"rate": d.base_net_rate, "amount": d.base_net_amount})
+		#update cost price
+		row.update({"cost": frappe.db.get_value("Item Price", {"item_code": "15755", "price_list": "Standard Buying"}, "price_list_rate")})
 
 		total_tax = 0
 		total_other_charges = 0
